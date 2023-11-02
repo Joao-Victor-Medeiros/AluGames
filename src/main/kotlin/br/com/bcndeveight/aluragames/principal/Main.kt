@@ -17,12 +17,10 @@ fun main(args: Array<String>) {
         val buscaApi = ConsumoApi()
         val informacoesJogo = buscaApi.buscaJogo(busca)
 
-        val jogo = Jogo(informacoesJogo.info.title, informacoesJogo.info.thumb)
-
         var meuJogo: Jogo? = null
 
         val resultado = runCatching {
-            val jogo = Jogo(informacoesJogo.info.title, informacoesJogo.info.thumb)
+            meuJogo = Jogo(informacoesJogo.info.title, informacoesJogo.info.thumb)
         }
 
         resultado.onFailure { println("Jogo inexistente.Tente outro id") }
@@ -35,13 +33,14 @@ fun main(args: Array<String>) {
                 val descricao = leitura.nextLine()
                 meuJogo?.descricao = descricao
             } else {
-                meuJogo?.descricao = meuJogo?.titulo
+
+                meuJogo?.descricao = "pesquisar no site oficial do jogo ${meuJogo?.titulo}"
             }
 
             gamer.jogosBuscados.add(meuJogo)
         }
 
-        println("Deseja buscar um outro joao? S/n")
+        println("Deseja buscar um outro jogo? S/n")
         val resposta = leitura.nextLine()
     }while (resposta.equals("s", true))
     println("Jogos buscados:")

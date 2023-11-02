@@ -7,8 +7,10 @@ data class Jogo (
     var descricao:String? = null
 
     override fun toString(): String {
-        return "br.com.bcndeveight.aluragames.modelo.Jogo(titulo:='$titulo' \n," +
-                " capa:'$capa'\n," +
-                " descricao:'$descricao'\n)"
+        return buildString {
+            append("titulo:='$titulo' \n,")
+            append(" capa:'$capa'\n,")
+            append(" descricao:'$descricao'\n)")
+        }
     }
 }

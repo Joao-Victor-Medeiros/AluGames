@@ -57,7 +57,7 @@ data class Gamer(val nome: String, var email: String) {
             val nome = leitura.nextLine()
             println("Digite seu e-mail:")
             val email = leitura.nextLine()
-            println("Deseja completar seu cadastro com usuário e data de nascimento? (S/N)")
+            println("Deseja completar seu cadastro com usuário e data de nascimento? (N/s)")
             val opcao = leitura.nextLine()
 
             if(opcao.equals("s", true)){
