@@ -4,7 +4,7 @@ import br.com.bcndeveight.aluragames.servico.ConsumoApi
 
 fun main() {
     val consumo = ConsumoApi()
-    var listaGamers = consumo.buscaGamers()
+    val listaGamers = consumo.buscaGamers()
 
     println(listaGamers)
 }
